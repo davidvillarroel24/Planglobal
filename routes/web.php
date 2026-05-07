@@ -29,7 +29,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('usuarios/{usuario}/edit', [UserController::class, 'edit'])->name('usuarios.edit');
     Route::put('usuarios/{usuario}', [UserController::class, 'update'])->name('usuarios.update');
     Route::delete('usuarios/{usuario}', [UserController::class, 'destroy'])->name('usuarios.destroy');
+
+    Route::resource('usuarios', UserController::class);
 });
 
 
 require __DIR__.'/auth.php';
+
+
